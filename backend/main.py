@@ -28,6 +28,65 @@ def getImageFromPixels(pixels,width,height):
     img=Image.fromarray(image_arr)
     return img
 
-x,width,height=getImagePixels(PATH)
-y=getImageFromPixels(x,width,height)
-y.save("new.jpg")
+#normalize the pixel array by converting all pixels to even numbers
+def normalizeImage(pixels):
+    '''
+    @param pixels: flattened pixel array of the image
+    returns: normalized pixel array of the image
+    '''
+    new_arr=list()
+    for pixel in pixels:
+        if pixel%2:
+            new_arr.append(pixel-1)
+        else:
+            new_arr.append(pixel)
+    return new_arr
+
+#encrypt via ceaser cipher
+def encrypt(plaintext, key):
+    ciphertext = ''
+    for i in range(len(plaintext)):
+        if plaintext[i]==" ":
+            ciphertext+=" "
+            continue
+        ciphertext += chr(((ord(plaintext[i])-ord('a')) + key) % 26 + ord('a'))
+    return ciphertext
+
+#decrypt via cease cipher
+def decrypt(ciphertext, key):
+    nkey = 26 - key
+    plaintext = ''
+    for i in range(len(ciphertext)):
+        if ciphertext[i]==" ":
+            plaintext+=" "
+            continue
+        plaintext += chr(((ord(ciphertext[i])-ord('a')) + nkey) % 26 + ord('a'))
+    return plaintext
+
+#get binary representation of the message
+def getBinary(text):
+    return ''.join(bin(ord(c)).replace('b','').zfill(8) for c in text)
+
+#get text representation of the binary
+def getText(binary):
+    return ''.join(chr(int(binary[i:i+8], 2)) for i in range(0, len(binary), 8))
+
+# encode the message to an image
+# def encode(image_path,message,key):
+#     pixels,width,height=getImagePixels(image_path)
+#     normalizedPixels=normalizeImage(pixels)
+#     ciphertext=encrypt(message,key)
+#     binary=getBinary(ciphertext)
+    
+    
+
+# x,width,height=getImagePixels(PATH)
+# z=normalizeImage(x)
+# y=getImageFromPixels(z,width,height)
+# y.save("new.jpg")
+# for c in "hello world":
+#     print(c,bin(ord(c)))
+a=getBinary("hello world.")
+b=getText(a)
+print(a)
+print(b)
