@@ -1,3 +1,4 @@
+from pydoc import plain
 from PIL import Image
 import numpy as np
 import os
@@ -72,12 +73,38 @@ def getText(binary):
     return ''.join(chr(int(binary[i:i+8], 2)) for i in range(0, len(binary), 8))
 
 # encode the message to an image
-# def encode(image_path,message,key):
-#     pixels,width,height=getImagePixels(image_path)
-#     normalizedPixels=normalizeImage(pixels)
-#     ciphertext=encrypt(message,key)
-#     binary=getBinary(ciphertext)
-    
+def encode(image_path,message,key):
+    pixels,width,height=getImagePixels(image_path)
+    normalizedPixels=normalizeImage(pixels)
+    ciphertext=encrypt(message,key)
+    binary=getBinary(ciphertext)
+    for i,bit in enumerate(binary):
+        normalizedPixels[i]+=int(bit)
+    print("normalized  ",normalizedPixels[:100])
+    # print("encoded  ",binary)
+    img=getImageFromPixels(normalizedPixels,width,height)
+    # pixel_array=list(img.getdata())
+    # print("pixelarray  ",pixel_array[:33])
+    # print("flat  ",[x for pixel in pixel_array for x in pixel][:100])
+    return img
+
+#decode the message from an image
+def decode(image_path,key):
+    pixels,width,height=getImagePixels(image_path)
+    print("decoded  ",pixels[:100])
+    binary=''
+    for i in range(len(pixels)):
+        if pixels[i]%2:
+            binary+=str(1)
+        else:
+            binary+=str(0)
+    message=getText(binary)
+    # print(message[:100])
+    # print("decoded  ",binary[:88])
+    plaintext=decrypt(message,key)
+    return plaintext
+
+
     
 
 # x,width,height=getImagePixels(PATH)
@@ -86,7 +113,13 @@ def getText(binary):
 # y.save("new.jpg")
 # for c in "hello world":
 #     print(c,bin(ord(c)))
-a=getBinary("hello world.")
-b=getText(a)
-print(a)
-print(b)
+# a=getBinary("hello world.")
+# b=getText("011010010110011001101101011011010111000000100000011110000111000001110011011011010110010101100011")
+# # print(a)
+# print(b)
+
+x=encode(PATH,"hello world",1)
+x.save("new.jpg")
+
+y=decode("new.jpg",1)
+# print(y[:100])
