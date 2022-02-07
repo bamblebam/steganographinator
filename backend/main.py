@@ -1,7 +1,7 @@
-from pydoc import plain
 from PIL import Image
 import numpy as np
 import os
+import string
 
 PATH=os.path.join(os.getcwd(),'backend\\assets\\test1.jpg')
 
@@ -47,8 +47,8 @@ def normalizeImage(pixels):
 def encrypt(plaintext, key):
     ciphertext = ''
     for i in range(len(plaintext)):
-        if plaintext[i]==" ":
-            ciphertext+=" "
+        if plaintext[i] not in string.ascii_lowercase:
+            ciphertext+=plaintext[i]
             continue
         ciphertext += chr(((ord(plaintext[i])-ord('a')) + key) % 26 + ord('a'))
     return ciphertext
@@ -58,8 +58,8 @@ def decrypt(ciphertext, key):
     nkey = 26 - key
     plaintext = ''
     for i in range(len(ciphertext)):
-        if ciphertext[i]==" ":
-            plaintext+=" "
+        if ciphertext[i]not in string.ascii_lowercase:
+            plaintext+=ciphertext[i]
             continue
         plaintext += chr(((ord(ciphertext[i])-ord('a')) + nkey) % 26 + ord('a'))
     return plaintext
@@ -80,18 +80,12 @@ def encode(image_path,message,key):
     binary=getBinary(ciphertext)
     for i,bit in enumerate(binary):
         normalizedPixels[i]+=int(bit)
-    print("normalized  ",normalizedPixels[:100])
-    # print("encoded  ",binary)
     img=getImageFromPixels(normalizedPixels,width,height)
-    # pixel_array=list(img.getdata())
-    # print("pixelarray  ",pixel_array[:33])
-    # print("flat  ",[x for pixel in pixel_array for x in pixel][:100])
     return img
 
 #decode the message from an image
 def decode(image_path,key):
     pixels,width,height=getImagePixels(image_path)
-    print("decoded  ",pixels[:100])
     binary=''
     for i in range(len(pixels)):
         if pixels[i]%2:
@@ -99,8 +93,6 @@ def decode(image_path,key):
         else:
             binary+=str(0)
     message=getText(binary)
-    # print(message[:100])
-    # print("decoded  ",binary[:88])
     plaintext=decrypt(message,key)
     return plaintext
 
@@ -118,8 +110,8 @@ def decode(image_path,key):
 # # print(a)
 # print(b)
 
-x=encode(PATH,"hello world",1)
-x.save("new.jpg")
+# x=encode(PATH,"Hello world. My name is Bamblebam",1)
+# x.save("new.png")
 
-y=decode("new.jpg",1)
+# y=decode("new.png",1)
 # print(y[:100])
