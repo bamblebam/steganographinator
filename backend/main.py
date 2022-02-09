@@ -32,4 +32,4 @@ with col2:
         img=Image.open(uploaded_file).convert('RGB')
         dec_text=decode(img,key)
         st.write("Decoded Text: ")
-        st.write(dec_text)
+        st.subheader(dec_text)
