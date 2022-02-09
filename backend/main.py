@@ -12,8 +12,8 @@ PATH=os.path.join(os.getcwd(),'assets\\enc_img.png')
 with col1:
     st.header("Encode Image")
     uploaded_file = st.file_uploader("Upload Files",type=['png','jpeg','jpg'],key="file1")
-    msg=st.text_input("Enter Message","Hello World.")
     key=st.number_input("Enter Key",0,25,5,key="encKey")
+    msg=st.text_area("Enter Message","Hello World.")
     if uploaded_file is not None and msg and key:
         img=Image.open(uploaded_file).convert('RGB')
         enc_img=encode(img,msg,key)
@@ -31,4 +31,5 @@ with col2:
     if uploaded_file is not None and key:
         img=Image.open(uploaded_file).convert('RGB')
         dec_text=decode(img,key)
-        st.write("Decoded Text",dec_text)
+        st.write("Decoded Text: ")
+        st.write(dec_text)
