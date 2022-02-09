@@ -59,7 +59,7 @@ def decrypt(ciphertext, key):
     nkey = 26 - key
     plaintext = ''
     for i in range(len(ciphertext)):
-        if ciphertext[i]not in string.ascii_lowercase:
+        if ciphertext[i] not in string.ascii_lowercase:
             plaintext+=ciphertext[i]
             continue
         plaintext += chr(((ord(ciphertext[i])-ord('a')) + nkey) % 26 + ord('a'))
@@ -72,6 +72,10 @@ def getBinary(text):
 #get text representation of the binary
 def getText(binary):
     return ''.join(chr(int(binary[i:i+8], 2)) for i in range(0, len(binary), 8))
+
+#Removes non ascii characters from the message
+def removeNonAscii(text):
+    return ''.join(i for i in text if ord(i)!=0)
 
 # encode the message to an image
 def encode(image,message,key):
@@ -95,12 +99,8 @@ def decode(image,key):
             binary+=str(0)
     message=getText(binary)
     text=decrypt(message,key)
-    enc_text=text.encode("ascii","ignore")
-    plaintext=enc_text.decode()
+    plaintext=removeNonAscii(text)
     return plaintext
-
-
-    
 
 # x,width,height=getImagePixels(PATH)
 # z=normalizeImage(x)
