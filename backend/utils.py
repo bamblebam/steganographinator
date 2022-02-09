@@ -12,6 +12,7 @@ def getImagePixels(image):
     returns: flattened pixel array of the image, width and height of the image
     '''
     im=image
+    # im=im.resize((500,500))
     width,height=im.size
     pixel_array=list(im.getdata())
     return [x for pixel in pixel_array for x in pixel],width,height
