@@ -42,4 +42,5 @@
  * Shrikant Sahu - 1911113
 
 
-![made-with-streamlit](https://user-images.githubusercontent.com/59617133/153754410-57dcc527-30eb-41b3-965c-08b171969d95.svg)
+
+![made-with-streamlit (1)](https://user-images.githubusercontent.com/59617133/153754448-c006c061-4c0c-49ff-93c2-95605768b066.svg)
