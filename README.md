@@ -10,7 +10,7 @@
 * It will also allow you to extract the original text from the image while decoding the image provided you enter the correct key value associated with it.
 
 ## File Types supported: 
-Images with extension:- .jpeg, .jpg and .png
+**Images with extension:- .jpeg, .jpg and .png**
 
 ## To run the project on localhost
 ```
