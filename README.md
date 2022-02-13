@@ -28,7 +28,7 @@ Images with extension:- .jpeg, .jpg and .png
  
  #### Note: Image Uploading size has been set to Max 200 MB.
  
- ### Contributors
+## Contributors
  * Burhanuddin Rangwala - 1911109
  * Rishabh Kothari - 1911110
  * Shrikant Sahu - 1911113
