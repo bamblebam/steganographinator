@@ -12,15 +12,6 @@
 ## File Types supported: 
 **Images with extension:- .jpeg, .jpg and .png**
 
-## To Run the project on localhost
-```
-1. git clone https://github.com/rishabh547/steganographinator.git
-2. cd .\steganographinator\
-3. cd backend
-4. Then do streamlit run main.py
-5. You can now see the project runnning at localhost:http://127.0.0.1:8000/
-```
-
 ## Features:
 
  ### 1. Encoding
@@ -35,7 +26,39 @@
   * Finally, The Decrypted Message will be displayed at the Decoding end. 
  
  #### Note: Image Uploading size has been set to Max 200 MB.
- 
+
+## To Run the project on localhost
+```
+1. git clone https://github.com/rishabh547/steganographinator.git
+2. cd .\steganographinator\
+3. cd backend
+4. Then do streamlit run main.py
+5. You can now see the project runnning at localhost:http://127.0.0.1:8000/
+```
+## Short Demo Video
+
+https://user-images.githubusercontent.com/59617133/153758689-58590a61-d7a2-4143-8400-92c192ce695a.mp4
+
+
+
+## UI Screen
+
+### Part-1
+![image](https://user-images.githubusercontent.com/59617133/153759192-1540700a-d501-4248-aed9-49cf1340f07b.png)
+</br>
+
+### Part-2
+![image](https://user-images.githubusercontent.com/59617133/153759238-b9cfd79e-9681-4524-adfa-1c5cb1fb89b1.png)
+
+</br>
+
+### Part-3
+
+![image](https://user-images.githubusercontent.com/59617133/153759252-4bbde8b5-27b3-4fbd-9c14-3fcab3a8786e.png)
+
+
+
+
 ## Contributors
  * Burhanuddin Rangwala - 1911109
  * Rishabh Kothari - 1911110
