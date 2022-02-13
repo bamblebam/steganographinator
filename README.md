@@ -23,8 +23,10 @@ Images with extension:- .jpeg, .jpg and .png
   * It allows user to download the image in the png format(lossless compression) which can be used while decoding.
  
  ### 2. Decoding
-  * A User can extract the Original text from the same image by Entering the correct key value assocaited with it.
- 
+  * In the Decode part, upload the image suspected to contain hidden text.
+  * Now enter the key value used while encoding to get the original plaintext.
+  * **Remember to upload only those images that have been generated using Steganographinator, since the logic is unique to this project**.
+  * Finally, The Decrypted Message will be displayed at the Decoding end. 
  
  #### Note: Image Uploading size has been set to Max 200 MB.
  
