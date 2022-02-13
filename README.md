@@ -1,5 +1,9 @@
 # Steganographinator
 
+
+## What is Steganography?
+Steganography is the art of hiding a message inside another message. In our case, we will hide a text message inside an image. An image will most propably go unnotified, most of the people will not suspect a message hidden inside of an image.
+
 ## Objective : 
 * To provide a WebPage which will allow you to upload an Image and Enter a Plain-Text Message associated with it while assigning a specific key value to it.
 * It will also allow you to extract the original text from the image while decoding the image provided you enter the correct key value associated with it.
