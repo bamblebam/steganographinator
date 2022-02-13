@@ -57,6 +57,8 @@ https://user-images.githubusercontent.com/59617133/153758689-58590a61-d7a2-4143-
 ![image](https://user-images.githubusercontent.com/59617133/153759252-4bbde8b5-27b3-4fbd-9c14-3fcab3a8786e.png)
 
 
+##  TechStack : Streamlit
+**Streamlit is an open source app framework in Python language and it helps us create web apps for data science and machine learning in a short time.**
 
 
 ## Contributors
