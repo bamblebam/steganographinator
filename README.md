@@ -40,3 +40,6 @@
  * Burhanuddin Rangwala - 1911109
  * Rishabh Kothari - 1911110
  * Shrikant Sahu - 1911113
+
+
+![made-with-streamlit](https://user-images.githubusercontent.com/59617133/153754410-57dcc527-30eb-41b3-965c-08b171969d95.svg)
