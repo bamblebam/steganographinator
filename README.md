@@ -19,7 +19,8 @@ Images with extension:- .jpeg, .jpg and .png
 ## Features:
 
  ### 1. Encoding
-  * To allow a user to upload an image (.png,.jpeg or .jpg) and enter a plain-text along with it with a specific key value.
+  * To allow a user to upload an image (.png,.jpeg or .jpg) and enter a plain-text along with it select a specific key value.
+  * Here , the message encryption is done using **Caesar Cipher** as a layer of security.
   * It allows user to download the image in the png format(lossless compression) which can be used while decoding.
  
  ### 2. Decoding
