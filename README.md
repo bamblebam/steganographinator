@@ -12,7 +12,7 @@
 ## File Types supported: 
 **Images with extension:- .jpeg, .jpg and .png**
 
-## To run the project on localhost
+## To Run the project on localhost
 ```
 1. git clone https://github.com/rishabh547/steganographinator.git
 2. cd .\steganographinator\
